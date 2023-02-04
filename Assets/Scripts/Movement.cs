@@ -23,9 +23,7 @@ public class Movement : MonoBehaviour
             Debug.Log("Jump");
             rb.velocity += new Vector2(0,jumpHeight);
         }
-
-        Debug.Log(Input.GetAxis("Horizontal"));
-
+        
         rb.velocity = new Vector2(Input.GetAxis("Horizontal") * Speed,rb.velocity.y);
 
         if(rb.velocity.x < 0)
@@ -38,5 +36,10 @@ public class Movement : MonoBehaviour
         }
 
         rb.velocity += new Vector2(0,-gravity) * Time.deltaTime;
+    }
+
+    public void OnCollisionEnter2D(Collision2D col)
+    {
+        Debug.Log("OnCollisionEnter2D");
     }
 }
