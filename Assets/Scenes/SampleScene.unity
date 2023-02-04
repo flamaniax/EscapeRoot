@@ -151,12 +151,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 500971635}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5dcf148a5625914fa7bed3c1ae53b77, type: 3}
+  m_Script: {fileID: 11500000, guid: bee95c274ccc83945bb6b96d624c6cf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 500971638}
   gravity: 9
-  JumpHeight: 1
+  jumpHeight: 5
+  Speed: 5
 --- !u!4 &500971637
 Transform:
   m_ObjectHideFlags: 0
@@ -482,12 +483,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
+  m_Sprite: {fileID: -5735487281335557095, guid: f1c618e3597fce24cad54c2902d27022, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.16, y: 0.16}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
