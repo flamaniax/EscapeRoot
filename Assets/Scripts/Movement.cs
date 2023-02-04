@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
+    public Rigidbody2D rb; //this is a rigidbody, which we will use to move the character around, and use for our physics system
+    public float gravity,jumpHeight,Speed;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -13,9 +16,16 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown("space"))
+        if(Input.GetKeyDown("space")) //this is the old input system for Unity. 
         {
             Debug.Log("Jump");
+            rb.velocity += new Vector2(0,jumpHeight);
         }
+
+        Debug.Log(Input.GetAxis("Horizontal"));
+
+        rb.velocity = new Vector2(Input.GetAxis("Horizontal") * Speed,rb.velocity.y);
+
+        rb.velocity += new Vector2(0,-gravity) * Time.deltaTime;
     }
 }
