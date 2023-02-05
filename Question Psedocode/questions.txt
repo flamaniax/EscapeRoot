@@ -1,0 +1,58 @@
+*Program generates 4 numbers, x_coord, y_coord, x_exit and y_exit*
+let x_coord be the x coordinate of the final chest, a random int number between 1 and 21, inclusive.
+let y_coord be the y coordinate of the final chest, a random int number bettween 1 and 10, inclusive.
+let x_exit be the x coordinate for the exit, a random int number between 1 and 21, inclusive.
+let y_exit be the y coordinate for the exit, a random int number bettween 1 and 10, inclusive.
+x_coord and y_coord cannot be equal.
+x_exit and y_exit cannot be equal.
+
+static void factorXChest(){
+    *Program generates random number between 1 and 5. let num be this number. num cannot be equal to x_coord.*
+    if(x_coord > num){
+      *print* ("Factor. one of the roots are the x-coordinate for the final chest: " + "x^2 - " + x_coord - num + "x" + " + " x_coord * num);
+    } else{
+        *print* ("Factor. one of the roots are the x-coordinate for the final chest: " + "x^2 - " + num - x_coord + "x" + " + " x_coord * num);
+    }
+
+
+while(player's answer is incorrect){
+   *print*("Options: " + x_coord + ", " + y_coord + ", " + num + ".");
+*request int input from player"
+if(input is equal to x_coord){
+    *print*("Correct! this is the x-coordinate of the chest. Write that down!");
+    *end loop*
+} else {
+    *print*("Incorrect. Please try again.")
+}
+}
+}
+
+static void factorYChest(){
+*Program generates random number between 1 and 5. let num be this number. num cannot be equal to y_coord.*
+    if(y_coord > num){
+      *print* ("Factor. one of the roots are the y-coordinate for the final chest: " + "x^2 - " + y_coord - num + "x" + " + " y_coord * num);
+    } else{
+        *print* ("Factor. one of the roots are the y-coordinate for the final chest: " + "x^2 - " + num - y_coord + "x" + " + " y_coord * num);
+    }
+    
+while(player's answer is incorrect){
+   *print*("Options: " + x_coord + ", " + y_coord + ", " + num + ".");
+*request int input from player"
+if(input is equal to y_coord){
+    *print*("Correct! this is the y-coordinate of the chest. Write that down!");
+    *end loop*
+} else {
+    *print*("Incorrect. Please try again.")
+}
+}
+}
+
+static void factorfinalChest(){
+    *print* ("Factor. the roots are the coordinates for the exit:");
+    if(y_exit > x_exit){
+        *print*("x^2 - " + y_exit - x_exit + "x" + " + " x_exit * y_exit);
+    } else{
+*print*("x^2 - " + x_exit - y_exit + "x" + " + " x_exit * y_exit);
+    }
+    
+}
