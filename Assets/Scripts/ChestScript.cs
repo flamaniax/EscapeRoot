@@ -22,6 +22,6 @@ public class ChestScript : MonoBehaviour
         //open canvas with problem
         PlayerPrefs.SetInt("HasControl",0);
         Question.SetActive(true);
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 }
