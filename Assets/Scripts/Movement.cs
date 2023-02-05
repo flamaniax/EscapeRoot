@@ -16,6 +16,8 @@ public class Movement : MonoBehaviour
 
     public AudioScript DigEffect;
 
+    public Animator PlayerAnimator;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -69,6 +71,8 @@ public class Movement : MonoBehaviour
             rb.velocity += new Vector2(0,jumpHeight);
             DigEffect.PlayJump();
             jumpCount -= 1;
+            PlayerAnimator.SetBool("grounded", false);
+            
         }
         
         rb.velocity = new Vector2(Input.GetAxis("Horizontal") * Speed,rb.velocity.y);
@@ -81,6 +85,15 @@ public class Movement : MonoBehaviour
         {
             PlayerSprite.flipX = false;
         }   
+        
+        if(Input.GetAxis("Horizontal") == 0)
+        {
+            PlayerAnimator.SetBool("Walking", false);
+        }
+        else
+        {
+            PlayerAnimator.SetBool("Walking", true);
+        }
 
         rb.velocity += new Vector2(0,-gravity) * Time.deltaTime;
     }
@@ -90,6 +103,7 @@ public class Movement : MonoBehaviour
         Vector2 DirectionVector = transform.position - col.transform.position;
         if(DirectionVector.y > 0)
         {
+            PlayerAnimator.SetBool("grounded", true);
             Debug.Log(DirectionVector);
             jumpCount = totalJumpCount;
         }
