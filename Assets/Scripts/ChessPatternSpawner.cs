@@ -25,11 +25,11 @@ public class ChessPatternSpawner : MonoBehaviour
             {
                 if(y%2 == x%2)
                 {
-                    Instantiate(WhiteTile,new Vector3((x-(XOffset*1/ScaleX)-0.5f),(y-(YOffset*1/ScaleY)-0.5f),0)*ScaleX,Quaternion.identity);
+                    Instantiate(WhiteTile,new Vector3((x-(XOffset*1/ScaleX)),(y-(YOffset*1/ScaleY)),0)*ScaleX,Quaternion.identity);
                 }
                 else
                 {
-                    Instantiate(BlackTile,new Vector3((x-(XOffset*1/ScaleX)-0.5f),(y-(YOffset*1/ScaleY)-0.5f),0)*ScaleY,Quaternion.identity);
+                    Instantiate(BlackTile,new Vector3((x-(XOffset*1/ScaleX)),(y-(YOffset*1/ScaleY)),0)*ScaleY,Quaternion.identity);
                 }
                 
             }
