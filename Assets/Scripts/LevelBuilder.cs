@@ -35,16 +35,16 @@ public class LevelBuilder : MonoBehaviour
 
         //randomize cooridnates of MapChest
 
-        MapChest.transform.position = new Vector3((Random.Range(0,Width)-(XOffset*1/ScaleX)),(Random.Range(0,Height)-(YOffset*1/ScaleY)-0.5f),Exit.transform.position.z)*ScaleX;
+        MapChest.transform.position = new Vector3((Random.Range(0,Width)-(XOffset*1/ScaleX)),(Random.Range(0,Height)-(YOffset*1/ScaleY)-0.5f),MapChest.transform.position.z)*ScaleX;
         QM.MapCoords = MapChest.transform.position;
         QM.factorXChest();
         MapChest.SetActive(false);
 
         // give X coordinate to Xchest, and give a fitting question
-        Xchest.transform.position = new Vector3((Random.Range(0,Width)-(XOffset*1/ScaleX)),(Random.Range(0,Height)-(YOffset*1/ScaleY)-0.5f),Exit.transform.position.z)*ScaleX;
+        Xchest.transform.position = new Vector3((Random.Range(0,Width)-(XOffset*1/ScaleX)),(Random.Range(0,Height)-(YOffset*1/ScaleY)-0.5f),Xchest.transform.position.z)*ScaleX;
         QM.XCoords = Xchest.transform.position;
         // give y coordinate to Ychest, and give a fitting question
-        Ychest.transform.position = new Vector3((Random.Range(0,Width)-(XOffset*1/ScaleX)),(Random.Range(0,Height)-(YOffset*1/ScaleY)-0.5f),Exit.transform.position.z)*ScaleX;
+        Ychest.transform.position = new Vector3((Random.Range(0,Width)-(XOffset*1/ScaleX)),(Random.Range(0,Height)-(YOffset*1/ScaleY)-0.5f),Ychest.transform.position.z)*ScaleX;
         QM.YCoords = Ychest.transform.position;
 
         for(int x = 0; x<=1/ScaleX*Width; x++)

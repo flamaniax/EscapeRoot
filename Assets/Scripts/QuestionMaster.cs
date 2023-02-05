@@ -11,7 +11,7 @@ public class QuestionMaster : MonoBehaviour
 
     public GameObject VicScreen;
 
-    public TextMeshProUGUI coords,XQuestionText,MapQuestionText,XDis,YDis; 
+    public TextMeshProUGUI coords,XQuestionText,MapQuestionText,XDis,YDis,PlayerCoordsBox; 
 
     bool Xgot,Ygot = false;
 
@@ -60,6 +60,8 @@ public class QuestionMaster : MonoBehaviour
             XDis.text = "Distance to X: " + (PlayerPos-XCoords).magnitude;
             YDis.text = "Distance to Y: " + (PlayerPos-YCoords).magnitude;
         }
+
+        PlayerCoordsBox.text = "Player: " +  Mathf.Round(PlayerPos.x)  + "," + Mathf.Round(PlayerPos.y) + ")";
 
         if(Input.GetKeyDown(KeyCode.R))
         {
