@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AudioScript : MonoBehaviour
 {
-    public AudioSource Dig,Chest;
+    public AudioSource Dig,Chest,Jump;
 
     // Start is called before the first frame update
     void Start()
@@ -26,5 +26,10 @@ public class AudioScript : MonoBehaviour
     public void PlayChest()
     {
         Chest.Play();
+    }
+
+    public void PlayJump()
+    {
+        Jump.Play();
     }
 }

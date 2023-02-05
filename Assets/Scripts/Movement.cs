@@ -14,6 +14,8 @@ public class Movement : MonoBehaviour
      public LayerMask DirtCheck;
     public SpriteRenderer PlayerSprite;
 
+    public AudioScript DigEffect;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +29,11 @@ public class Movement : MonoBehaviour
         Vector2 Aimdir = new Vector2(Input.GetAxis("Horizontal"), 0);
         RaycastHit2D hit = Physics2D.Raycast(transform.position,Aimdir,distance,DirtCheck); 
 
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            Debug.Log("application quitting!");
+            Application.Quit();
+        }
 
         if(PlayerPrefs.GetInt("HasControl") == 1)
         {
@@ -60,6 +67,7 @@ public class Movement : MonoBehaviour
         {
             Debug.Log("Jump");
             rb.velocity += new Vector2(0,jumpHeight);
+            DigEffect.PlayJump();
             jumpCount -= 1;
         }
         
